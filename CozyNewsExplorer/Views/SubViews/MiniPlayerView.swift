@@ -6,18 +6,18 @@ struct MiniPlayerView: View {
     @EnvironmentObject private var theme: ThemeManager
     
     var body: some View {
-        if let track = player.current {
-            MiniSpotifyEmbedView(url: track.embedURL(isDark: theme.isDark))
+        if let song = player.current {
+            MiniSpotifyEmbedView(url: song.embedURL(isDark: theme.isDark))
                 .frame(height: 96)
                 .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
                 .shadow(radius: 3, y: 1)
                 .accessibilityElement(children: .ignore)
-                .accessibilityLabel("\(track.title), \(track.artist)")
+                .accessibilityLabel("\(song.title), \(song.artist)")
         }
     }
 }
 
-// MARK: - Private embedded WebView just for MiniPlayer
+// MARK: - Private embedded WebView only for MiniPlayer
 
 private struct MiniSpotifyEmbedView: View {
     let url: URL

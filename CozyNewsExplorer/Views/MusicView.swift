@@ -67,7 +67,7 @@ struct MusicView: View {
             }
         }
         .preferredColorScheme(theme.preference.colorScheme)
-//        .animation(.spring(response: 0.35, dampingFraction: 0.85), value: player.current?.id)
+        .animation(.spring(response: 0.35, dampingFraction: 0.85), value: player.current?.id)
     }
     
     private var gridColumns: [GridItem] {
