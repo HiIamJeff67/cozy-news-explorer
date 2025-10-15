@@ -8,6 +8,10 @@ struct ContentView: View {
         VStack {
             ZStack {
                 TabView {
+                    HomeView()
+                        .tabItem {
+                            Label(TabbarTabs.Home.name, systemImage: TabbarTabs.Home.symbol)
+                        }
                     MusicView()
                         .tabItem {
                             Label(TabbarTabs.Music.name, systemImage: TabbarTabs.Music.symbol)

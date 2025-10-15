@@ -5,7 +5,6 @@ struct HeadlineCardView: View {
 
     var body: some View {
         ZStack {
-            // 背景圖片層：明確填滿並裁切，避免外擴
             if let urlStr = article.urlToImage, let url = URL(string: urlStr) {
                 AsyncImage(url: url) { phase in
                     switch phase {

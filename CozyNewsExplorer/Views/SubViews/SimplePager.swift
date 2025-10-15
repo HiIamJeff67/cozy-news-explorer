@@ -1,13 +1,13 @@
 import SwiftUI
 
-struct SimplePager<Page: View>: View {
+struct SimplePager<Child: View>: View {
     let pageCount: Int
     @Binding var currentPage: Int
     let dotColor: Color
     let dotInactiveColor: Color
     let dotSize: CGFloat
     let spacing: CGFloat
-    let pages: () -> [Page]
+    let pages: () -> [Child]
 
     init(
         pageCount: Int,
@@ -16,7 +16,7 @@ struct SimplePager<Page: View>: View {
         dotInactiveColor: Color = Color(.label).opacity(0.25),
         dotSize: CGFloat = 8,
         spacing: CGFloat = 8,
-        @ViewBuilder pages: @escaping () -> [Page]
+        children: @escaping () -> [Child]
     ) {
         self.pageCount = pageCount
         self._currentPage = currentPage
@@ -24,7 +24,7 @@ struct SimplePager<Page: View>: View {
         self.dotInactiveColor = dotInactiveColor
         self.dotSize = dotSize
         self.spacing = spacing
-        self.pages = pages
+        self.pages = children // place all the children to the pages in order
     }
 
     var body: some View {
@@ -34,10 +34,10 @@ struct SimplePager<Page: View>: View {
                 ForEach(Array(all.enumerated()), id: \.offset) { index, page in
                     page
                         .tag(index)
-                        .contentShape(Rectangle()) // 讓整頁都可滑
+                        .contentShape(Rectangle())
                 }
             }
-            .tabViewStyle(.page(indexDisplayMode: .never)) // 自己畫點點
+            .tabViewStyle(.page(indexDisplayMode: .never))
             .frame(maxWidth: .infinity, maxHeight: .infinity)
 
             DotsIndicator(

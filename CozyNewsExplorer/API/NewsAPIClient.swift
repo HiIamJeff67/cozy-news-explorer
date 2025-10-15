@@ -39,7 +39,7 @@ struct NewsAPIClient {
     // MARK: - Endpoints
 
     // /v2/top-headlines
-    func topHeadlines(
+    func searchTopHeadlines(
         country: String? = "us",
         category: String? = nil,
         q: String? = nil,
@@ -60,25 +60,8 @@ struct NewsAPIClient {
     // /v2/everything
     func searchEverything(
         query: String,
-        pageSize: Int = 20,
-        sortBy: String? = "publishedAt",
-        language: String? = "en"
-    ) async throws -> [Article] {
-        return try await searchEverything(
-            query: query,
-            from: nil,
-            to: nil,
-            sortBy: sortBy,
-            language: language,
-            pageSize: pageSize
-        )
-    }
-
-    // /v2/everything
-    func searchEverything(
-        query: String,
-        from: String?,          // 例如 "2025-10-12"
-        to: String?,            // 例如 "2025-10-12"
+        from: String? = nil,          // 例如 "2025-10-12"
+        to: String? = nil,            // 例如 "2025-10-12"
         sortBy: String? = "publishedAt", // relevance / popularity / publishedAt
         language: String? = "en",
         pageSize: Int = 20
@@ -97,7 +80,6 @@ struct NewsAPIClient {
         return try await request(url: url)
     }
 
-    // MARK: - Core request
 
     private func request(url: URL) async throws -> [Article] {
         var req = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 30)

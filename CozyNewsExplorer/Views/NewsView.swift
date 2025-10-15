@@ -2,6 +2,8 @@ import SwiftUI
 
 struct NewsView : View {
     @EnvironmentObject private var theme: ThemeManager
+    
+    // the NewsViewModel is a ObservableObject, so it may change the current view and force it to re-render
     @StateObject private var vm = NewsViewModel()
     @State private var query: String = ""
 

@@ -16,6 +16,7 @@
 			membershipExceptions = (
 				Info.plist,
 				NewsAPIConfig.xcconfig,
+				ReferenceImages.md,
 			);
 			target = 1F563DE42E9B6DDA00E596BC /* CozyNewsExplorer */;
 		};
@@ -27,6 +28,7 @@
 			buildPhase = 1F563DE12E9B6DDA00E596BC /* Sources */;
 			membershipExceptions = (
 				NewsAPIConfig.xcconfig,
+				ReferenceImages.md,
 			);
 		};
 /* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
