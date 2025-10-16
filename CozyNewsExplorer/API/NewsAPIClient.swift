@@ -59,7 +59,7 @@ struct NewsAPIClient {
 
     // /v2/everything
     func searchEverything(
-        query: String,
+        q: String,
         from: String? = nil,          // 例如 "2025-10-12"
         to: String? = nil,            // 例如 "2025-10-12"
         sortBy: String? = "publishedAt", // relevance / popularity / publishedAt
@@ -68,7 +68,7 @@ struct NewsAPIClient {
     ) async throws -> [Article] {
         var comps = URLComponents(url: baseURL.appendingPathComponent("everything"), resolvingAgainstBaseURL: false)
         var items: [URLQueryItem] = [
-            .init(name: "q", value: query),
+            .init(name: "q", value: q),
             .init(name: "pageSize", value: String(pageSize))
         ]
         if let from { items.append(.init(name: "from", value: from)) }

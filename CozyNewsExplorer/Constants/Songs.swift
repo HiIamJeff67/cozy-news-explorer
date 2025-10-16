@@ -2,7 +2,7 @@ import Foundation
 
 // https://open.spotify.com/oembed?url=https://open.spotify.com/track/3Hyw4Sh4ZwTec90osRkvni
 
-struct Storage {
+struct Songs {
     static let TOGENASHI_TOGEARI_Songs: [SongModel] = [
         SongModel(
             title: "雑踏、僕らの街",

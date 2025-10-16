@@ -10,7 +10,7 @@ struct MusicView: View {
     @EnvironmentObject private var theme : ThemeManager
     @EnvironmentObject private var player: PlayerStore
     
-    @State private var songs: [SongModel] = Storage.Lofi_Study_Songs + Storage.TOGENASHI_TOGEARI_Songs
+    @State private var songs: [SongModel] = Songs.Lofi_Study_Songs + Songs.TOGENASHI_TOGEARI_Songs
     @State private var path: [MusicNavigationPath] = []
     
     func handleMusicCardOnClick(song: SongModel) -> Void {
@@ -39,22 +39,7 @@ struct MusicView: View {
                 .padding(.bottom, 24)
             }
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button(action: goToMyGithub) {
-                        Image(systemName: "heart.fill")
-                        Text("Buy me a coffee !")
-                    }
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: theme.toggle) {
-                        Image(systemName: theme.isDark ? "sun.max.fill" : "moon.fill")
-                            .font(.title3)
-                            .foregroundStyle(theme.isDark ? .orange : .blue)
-                            .symbolEffect(.bounce, value: theme.isDark)
-                    }
-                    .background(.ultraThinMaterial)
-                    .clipShape(Circle())
-                }
+                AppToolbarContent()
             }
             .toolbarColorScheme(theme.isDark ? .dark : .light, for: .navigationBar)
             .toolbarBackground(theme.isDark ? .black.opacity(0.3) : .white.opacity(0.3), for: .navigationBar)

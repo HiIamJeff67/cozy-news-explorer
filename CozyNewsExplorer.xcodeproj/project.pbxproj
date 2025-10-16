@@ -6,8 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		1F58194B2EA0B4A10034C42F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1F58194A2EA0B49A0034C42F /* README.md */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		1F563DE52E9B6DDA00E596BC /* CozyNewsExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CozyNewsExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F58194A2EA0B49A0034C42F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -59,6 +64,7 @@
 		1F563DDC2E9B6DDA00E596BC = {
 			isa = PBXGroup;
 			children = (
+				1F58194A2EA0B49A0034C42F /* README.md */,
 				1F563DE72E9B6DDA00E596BC /* CozyNewsExplorer */,
 				1F563DE62E9B6DDA00E596BC /* Products */,
 			);
@@ -136,6 +142,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F58194B2EA0B4A10034C42F /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

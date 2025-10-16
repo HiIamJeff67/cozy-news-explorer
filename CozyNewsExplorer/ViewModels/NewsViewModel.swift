@@ -33,7 +33,7 @@ final class NewsViewModel: ObservableObject {
             let headlines = try await client.searchTopHeadlines(country: "us", category: nil, pageSize: 10)
             self.topHeadlines = Array(headlines.prefix(10))
             let all = try await client.searchEverything(
-                query: "technology",
+                q: "technology",
                 from: nil,
                 to: nil,
                 sortBy: "publishedAt",
@@ -62,7 +62,7 @@ final class NewsViewModel: ObservableObject {
         errorMessage = nil
         do {
             let result = try await client.searchEverything(
-                query: query,
+                q: query,
                 from: nil,
                 to: nil,
                 sortBy: "publishedAt",
