@@ -1,4 +1,4 @@
-### Cozy News Explorer
+## Cozy News Explorer
 
 以 SwiftUI 打造的輕量 App，結合「新聞閱讀」與「音樂播放」。在閱讀新聞時，也能播放舒適的 Spotify 音樂，並支援主題深淺色切換與迷你播放器。
 
